@@ -1,4 +1,4 @@
-package org.mengsoft.webbackend.util;
+package org.mengsoft.webbackend.common.config;
 
 
 import org.springframework.stereotype.Component;
@@ -22,7 +22,7 @@ public class CorsFilter implements Filter {
         response.setHeader("Access-Control-Allow-Credentials", "true");
         response.setHeader("Access-Control-Allow-Methods", "POST, GET, PATCH, DELETE, PUT");
         response.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, " +
-                                "token");
+                                "Access-Token");
         chain.doFilter(req, res);
     }
 

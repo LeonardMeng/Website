@@ -1,16 +1,34 @@
 package org.mengsoft.webbackend.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import io.swagger.annotations.ApiOperation;
+import lombok.Data;
+import org.hibernate.validator.constraints.Length;
+import org.mengsoft.webbackend.common.annotation.Phone;
+import org.springframework.data.relational.core.mapping.Embedded;
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+
+@ApiModel(value = "User Info")
+@Data
 public class User {
+
+    @ApiModelProperty("value = User ID")
     private Long userId;
 
+    @NotEmpty
+    @Length(min = 6, max = 14, message = "The length of username must be 6 - 12.")
     private String userName;
 
     private String nickname;
 
+    @Email
     private String email;
 
+    @Phone
     private String mobile;
 
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
@@ -26,65 +44,5 @@ public class User {
         this.mobile = mobile;
         this.password = password;
         this.role = role;
-    }
-
-    public User() {
-        super();
-    }
-
-    public Long getUserId() {
-        return userId;
-    }
-
-    public void setUserId(Long userId) {
-        this.userId = userId;
-    }
-
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName == null ? null : userName.trim();
-    }
-
-    public String getNickname() {
-        return nickname;
-    }
-
-    public void setNickname(String nickname) {
-        this.nickname = nickname == null ? null : nickname.trim();
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email == null ? null : email.trim();
-    }
-
-    public String getMobile() {
-        return mobile;
-    }
-
-    public void setMobile(String mobile) {
-        this.mobile = mobile == null ? null : mobile.trim();
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password == null ? null : password.trim();
-    }
-
-    public String getRole() {
-        return role;
-    }
-
-    public void setRole(String role) {
-        this.role = role == null ? null : role.trim();
     }
 }

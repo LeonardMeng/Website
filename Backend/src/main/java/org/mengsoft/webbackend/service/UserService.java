@@ -1,12 +1,27 @@
 package org.mengsoft.webbackend.service;
 
+import org.apache.ibatis.annotations.Param;
+import org.mengsoft.webbackend.dao.UserMapper;
 import org.mengsoft.webbackend.model.User;
+import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.List;
 
-public interface UserService {
+@Service("userService")
+public class UserService {
 
-    public User GetUserById(Long userId);
+    @Resource
+    private UserMapper userMapper;
 
-    public List<User> GetUserByPageSize();
+
+    public User GetUserById(Long userId) {
+        return userMapper.selectByUserId(userId);
+    }
+
+
+    public List<User> GetUserByPageSize(){
+        return userMapper.selectByPageSize(1, 10);
+    }
+
 }
