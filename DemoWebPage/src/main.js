@@ -3,7 +3,13 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import VueParticles from 'vue-particles'
+import ElementUI from 'element-ui'
+import locale from 'element-ui/lib/locale/lang/en'
 
+Vue.use(ElementUI, { locale })
+
+Vue.use(VueParticles)
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
