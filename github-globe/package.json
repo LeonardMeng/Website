@@ -1,5 +1,5 @@
 {
-  "name": "websitewebdemo",
+  "name": "vue-mp4-player",
   "version": "1.0.0",
   "description": "A demo web of website",
   "author": "",
@@ -10,14 +10,19 @@
     "build": "node build/build.js"
   },
   "dependencies": {
-    "axios": "^0.20.0",
+    "axios": "^0.21.4",
+    "echarts": "^5.2.2",
+    "echarts-gl": "^2.0.8",
     "element-ui": "^2.13.2",
     "js-cookie": "^2.2.1",
     "vue": "^2.5.2",
+    "vue-echarts": "^6.0.0",
+    "vue-flv-player": "^1.0.3",
     "vue-particles": "^1.0.9",
     "vue-router": "^3.0.1"
   },
   "devDependencies": {
+    "@vue/composition-api": "^1.3.1",
     "autoprefixer": "^7.1.2",
     "babel-core": "^6.22.1",
     "babel-helper-vue-jsx-merge-props": "^2.0.3",

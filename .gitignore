@@ -1,2 +1,3 @@
-DemoWebPage/node_modules/
-AdminWeb/node_modules/
+*/node_modules/
+dminWeb/node_modules/
+*/.idea/
